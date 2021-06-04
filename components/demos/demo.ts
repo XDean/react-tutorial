@@ -1,8 +1,8 @@
-import {ReactNode} from "react";
+import {ComponentType} from "react";
 
 export type Demo = {
   id: string
   name: string
-  doc: ReactNode
+  doc: ComponentType
   code: string
 }

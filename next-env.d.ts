@@ -2,7 +2,7 @@
 /// <reference types="next/types/global" />
 
 declare module '*.mdx' {
-  let MDXComponent: (props: any) => JSX.Element
+  let MDXComponent: () => JSX.Element
   export default MDXComponent
 }
 

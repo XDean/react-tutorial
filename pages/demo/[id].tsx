@@ -3,6 +3,7 @@ import {useRouter} from 'next/router'
 import {DemoList} from "../../components/DemoList";
 import {Demos} from "../../components/demos/demos";
 import {useEffect} from "react";
+import {DemoView} from "../../components/DemoView";
 
 export default function Index() {
   const router = useRouter()
@@ -20,8 +21,8 @@ export default function Index() {
         <div className={'w-2/12 max-w-6xl h-full border-r p-1'}>
           <DemoList selected={demo}/>
         </div>
-        <div className={'w-0 flex-grow h-full'}>
-
+        <div className={'w-0 flex-grow h-full relative'}>
+          <DemoView demo={demo}/>
         </div>
       </div>
     </DefaultLayout>

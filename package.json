@@ -10,13 +10,16 @@
   "dependencies": {
     "@blueprintjs/core": "^3.44.3",
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "@types/react-splitter-layout": "^3.0.1",
     "clsx": "^1.1.1",
+    "github-markdown-css": "^4.0.0",
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-split-pane": "^0.1.92"
+    "react-grid-layout": "^1.2.5"
   },
   "devDependencies": {
+    "@types/react-grid-layout": "^1.1.1",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.2.2",
     "@types/node": "^14.14.31",

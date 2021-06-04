@@ -11,8 +11,10 @@ export default function Home() {
         </div>
         <div className={'text-3xl font-bold p-4 mt-8 shadow-xl bg-white border-gray-500 border rounded-lg ' +
         'transition hover:bg-blue-600 hover:text-white cursor-pointer'}>
-          <Link href={'/demo/hello-world'}>
-            GET START
+          <Link href={'/demo/0'}>
+            <div>
+              GET START
+            </div>
           </Link>
         </div>
       </div>

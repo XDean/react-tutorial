@@ -10,4 +10,14 @@ module.exports = withPlugins([
       },
     }
   )],
+  {
+    webpack: config => {
+      config.module.rules.push({
+        test: /\.demo\.js/,
+        use: 'raw-loader',
+      })
+
+      return config
+    }
+  }
 ])

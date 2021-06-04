@@ -10,7 +10,9 @@
   "dependencies": {
     "next": "latest",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@blueprintjs/core": "^3.44.3"
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.6.22",

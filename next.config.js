@@ -13,7 +13,7 @@ module.exports = withPlugins([
   {
     webpack: config => {
       config.module.rules.push({
-        test: /\.demo\.js/,
+        test: /\.djsx/,
         use: 'raw-loader',
       })
 

@@ -1,0 +1,7 @@
+const data = ['Dean', 'Jason', 'Alex']
+
+const App = () => (
+  <ol>
+    {data.map(e => <li key={e}>{e}</li>)}
+  </ol>
+)

@@ -12,7 +12,7 @@ export const DemoList = (props: Props) => {
     <ul className={'text-xl'}>
       {Demos.map((e, i) => (
         <li key={i}>
-          <Link href={`/demo/${e.id}`}>
+          <Link href={`/page/${e.id}`}>
             <div className={clsx(
               'px-2 py-1 cursor-pointer hover:underline',
               e.name === props.selected.name ?

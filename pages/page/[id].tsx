@@ -11,7 +11,7 @@ export default function Index() {
   const demo = Demos.find(e => e.id === id) || Demos[0]
   useEffect(() => {
     if (id !== demo.id) {
-      router.replace(`/demo/${demo.id}`, undefined, {shallow: true})
+      router.replace(`/page/${demo.id}`, undefined, {shallow: true})
     }
   }, [id, demo.id])
 

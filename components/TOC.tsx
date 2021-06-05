@@ -1,25 +1,24 @@
-import {Demos} from "./demos/demos";
 import Link from 'next/link'
 import clsx from "clsx";
-import {Demo} from "./demos/demo";
+import {AllArticles, ArticleData} from "./articles";
 
 type Props = {
-  selected: Demo
+  selected: ArticleData
 }
 
-export const DemoList = (props: Props) => {
+export const TOC = (props: Props) => {
   return (
     <ul className={'text-xl'}>
-      {Demos.map((e, i) => (
+      {AllArticles.map((e, i) => (
         <li key={i}>
-          <Link href={`/page/${e.id}`}>
+          <Link href={`/article/${e.meta.id}`}>
             <div className={clsx(
               'px-2 py-1 cursor-pointer hover:underline',
-              e.name === props.selected.name ?
+              e.meta.id === props.selected.meta.id ?
                 'bg-blue-300 text-white rounded-md' :
                 'hover:text-gray-700'
             )}>
-              {e.name}
+              {e.meta.name}
             </div>
           </Link>
         </li>

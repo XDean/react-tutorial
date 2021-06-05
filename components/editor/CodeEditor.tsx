@@ -15,6 +15,7 @@ const Ace = dynamic(
     ),
     ssr: false,
   })
+
 type Props = {
   mode: 'jsx' | 'css'
   code: string
@@ -27,6 +28,7 @@ export const CodeEditor = (props: Props) => {
       mode={props.mode}
       theme="monokai"
       width={'100%'}
+      height={'100%'}
       fontSize={18}
       showPrintMargin={true}
       showGutter={true}

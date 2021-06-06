@@ -1,4 +1,4 @@
-import {useCallback, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {useDebounce} from "react-use";
 import {CodeEditor} from "./CodeEditor";
 import {ReactPreviewer} from "./ReactPreviewer";
@@ -15,6 +15,7 @@ export const ReactEditor = (props: Props) => {
   const [type, setType] = useState<keyof Code>('js')
   const [code, setCode] = useState(props.code)
   const [previewCode, setPreviewCode] = useState(props.code)
+  useEffect(() => setCode(props.code), [props.code])
   useDebounce(() => setPreviewCode(code), 300, [code])
 
   return (

@@ -1,9 +1,18 @@
 import {SrcReactEditor} from "../editor/SrcReactEditor";
 
 export const meta = {
-  id: 'render',
-  name: 'Render 渲染',
+  id: 'jsx',
+  name: 'JSX',
 }
 
-# Render 渲染
+# JSX
+
+现在让我们看一个略有不一样的`Hello World`：
+
+<SrcReactEditor js={'/code/jsx.jsx'}/>
+
+我们似乎直接在JS脚本中写了HTML。
+然而这些代码既不是HTML也不是字符串。
+
+这其实是JSX拓展语法。它允许我们在JS代码中写入类似于HTML的代码，实际上它们会被转移成React元素对象。
 

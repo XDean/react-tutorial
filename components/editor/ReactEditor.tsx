@@ -19,7 +19,7 @@ export const ReactEditor = (props: Props) => {
   useDebounce(() => setPreviewCode(code), 300, [code])
 
   return (
-    <div className={'my-2 mx-1 flex flex-row ring-1 ring-gray-500 w-8/12 h-[300px]'}>
+    <div className={'my-2 mx-1 flex flex-row ring-1 ring-gray-500 w-9/12 h-[300px]'}>
       <div className={'w-0 flex-grow border-r flex-col flex'}>
         {css && (
           <div className={'bg-black text-white text-lg'}>

@@ -30,17 +30,12 @@ export const ReactPreviewer = (props: Props) => {
     }
 </script>
 <script type="text/babel">
-  const root = document.getElementById('root')
   try {
     ${props.code.js}
-    ReactDOM.render(
-      <App/>,
-      root
-    );
   } catch (e) {
     ReactDOM.render(
       <div>{e.message}</div>,
-      root
+      document.getElementById('root')
     )
   }
 </script>

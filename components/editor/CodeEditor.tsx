@@ -19,7 +19,7 @@ const Ace = dynamic(
 type Props = {
   mode: 'jsx' | 'css'
   code: string
-  setCode: (v: string) => void
+  onCodeChange: (v: string) => void
 }
 
 export const CodeEditor = (props: Props) => {
@@ -34,7 +34,7 @@ export const CodeEditor = (props: Props) => {
       showGutter={true}
       highlightActiveLine={true}
       value={props.code}
-      onChange={useCallback(e => props.setCode(e), [props.setCode])}
+      onChange={useCallback(e => props.onCodeChange(e), [props.onCodeChange])}
       setOptions={{
         enableBasicAutocompletion: true,
         enableLiveAutocompletion: true,

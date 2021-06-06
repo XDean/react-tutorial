@@ -15,7 +15,7 @@ export const ReactEditor = (props: Props) => {
   const [type, setType] = useState<keyof Code>('js')
   const [code, setCode] = useState(props.code)
   const [previewCode, setPreviewCode] = useState(props.code)
-  useDebounce(() => setPreviewCode(code), 100, [code])
+  useDebounce(() => setPreviewCode(code), 300, [code])
 
   return (
     <div className={'my-2 mx-1 flex flex-row ring-1 ring-gray-500 w-8/12 h-[300px]'}>
@@ -35,11 +35,13 @@ export const ReactEditor = (props: Props) => {
           </span>
           </div>
         )}
-        <div className={'relative h-0 flex-grow'}>
-          <CodeEditor code={code[type]}
-                      setCode={useCallback((v) => setCode(c => ({...c, [type]: v})), [type])}
-                      mode={type === 'js' ? 'jsx' : 'css'}/>
-        </div>
+        {['js', 'css'].map(t => (
+          <div className={clsx('relative h-0 flex-grow', t === type ? 'block' : 'hidden')} key={t}>
+            <CodeEditor code={code[t as keyof Code]}
+                        onCodeChange={useCallback((v) => setCode(c => ({...c, [t]: v})), [])}
+                        mode={t === 'js' ? 'jsx' : 'css'}/>
+          </div>
+        ))}
       </div>
       <ReactPreviewer code={previewCode} className={'w-0 flex-grow'}/>
     </div>

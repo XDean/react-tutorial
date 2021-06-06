@@ -15,7 +15,7 @@ export const ReactEditor = (props: Props) => {
   const [type, setType] = useState<keyof Code>('js')
   const [code, setCode] = useState(props.code)
   const [previewCode, setPreviewCode] = useState(props.code)
-  useDebounce(() => setPreviewCode(code), 1000, [code])
+  useDebounce(() => setPreviewCode(code), 100, [code])
 
   return (
     <div className={'my-2 mx-1 flex flex-row ring-1 ring-gray-500 w-8/12 h-[300px]'}>

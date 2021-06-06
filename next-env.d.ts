@@ -6,7 +6,3 @@ declare module '*.mdx' {
   export default MDXComponent
   export const meta: any
 }
-
-declare module '*.djsx' {
-  export default string
-}

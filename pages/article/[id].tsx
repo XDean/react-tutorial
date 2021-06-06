@@ -18,7 +18,7 @@ export default function Index() {
   return (
     <DefaultLayout>
       <div className={'w-full h-full flex flex-row items-center'}>
-        <div className={'w-2/12 max-w-6xl h-full border-r p-1'}>
+        <div className={'max-w-2/12 h-full border-r p-1 mr-2'}>
           <TOC selected={article}/>
         </div>
         <div className={'w-0 flex-grow h-full relative'}>

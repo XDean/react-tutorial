@@ -6,12 +6,4 @@ module.exports = withMDX({
     remarkPlugins: [],
     rehypePlugins: [],
   },
-})({
-  webpack: config => {
-    config.module.rules.push({
-      test: /\.djsx/,
-      use: 'raw-loader',
-    })
-    return config
-  }
 })

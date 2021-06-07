@@ -19,7 +19,6 @@ export const SrcReactEditor = (props: Props) => {
         js: js.data || "",
         css: css.data || "",
       }}
-      css={props.css !== undefined}
     />
   )
 }

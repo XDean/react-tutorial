@@ -6,6 +6,8 @@
 
 @import "./md.css";
 
+@import "~prismjs/themes/prism-okaidia.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

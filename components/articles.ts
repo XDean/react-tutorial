@@ -5,6 +5,7 @@ import A3, {meta as m3} from './article/3-render.mdx'
 import A4, {meta as m4} from './article/4-component.mdx'
 import A5, {meta as m5} from './article/5-state.mdx'
 import A6, {meta as m6} from './article/6-condition.mdx'
+import A7, {meta as m7} from './article/7-list.mdx'
 
 export type ArticleData = {
   Component: React.ComponentType
@@ -22,4 +23,5 @@ export const AllArticles: ArticleData[] = [
   {Component: A4, meta: m4},
   {Component: A5, meta: m5},
   {Component: A6, meta: m6},
+  {Component: A7, meta: m7},
 ]

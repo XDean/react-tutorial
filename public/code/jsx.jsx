@@ -9,6 +9,9 @@ const App = () => {
       <span>
         {who}
       </span>
+      <button onClick={() => alert('Hello')}>
+        Say Hello
+      </button>
     </div>
   )
 }

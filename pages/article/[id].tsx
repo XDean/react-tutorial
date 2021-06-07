@@ -21,7 +21,7 @@ export default function Index() {
         <div className={'max-w-2/12 h-full border-r p-1 mr-2'}>
           <TOC selected={article}/>
         </div>
-        <div className={'w-0 flex-grow h-full relative'}>
+        <div className={'w-0 flex-grow h-full relative overflow-auto'}>
           <Article data={article}/>
         </div>
       </div>

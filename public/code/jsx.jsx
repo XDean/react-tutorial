@@ -1,13 +1,17 @@
-const App = () => (
-  <div>
-    <h1 style={{fontStyle: 'italic'}}>
-      Hello
-    </h1>
-    <h2 align={'right'}>
-      World
-    </h2>
-  </div>
-)
+const App = () => {
+  const style = {fontSize: 30}
+  const who = 'XDean'
+  return (
+    <div>
+      <span style={style}>
+        Hello
+      </span>
+      <span>
+        {who}
+      </span>
+    </div>
+  )
+}
 
 ReactDOM.render(
   <App/>,

@@ -1,6 +1,6 @@
 import A0, {meta as m0} from './article/0-introduce.mdx'
 import A1, {meta as m1} from './article/1-hello-world.mdx'
-import A2, {meta as m2} from './article/2-render.mdx'
+import A2, {meta as m2} from './article/2-jsx.mdx'
 
 export type ArticleData = {
   Component: React.ComponentType

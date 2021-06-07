@@ -5,6 +5,7 @@ import {fetchStatic} from "../util/fetch";
 type Props = {
   js: string
   css?: string
+  className?:string
 }
 
 export const SrcReactEditor = (props: Props) => {
@@ -13,6 +14,7 @@ export const SrcReactEditor = (props: Props) => {
 
   return (
     <ReactEditor
+      className={props.className}
       code={{
         js: js.data || "",
         css: css.data || "",

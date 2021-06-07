@@ -8,6 +8,7 @@ import clsx from "clsx";
 type Props = {
   code: Code
   css?: boolean // show css tab, default true
+  className?:string
 }
 
 export const ReactEditor = (props: Props) => {
@@ -16,10 +17,10 @@ export const ReactEditor = (props: Props) => {
   const [code, setCode] = useState(props.code)
   const [previewCode, setPreviewCode] = useState(props.code)
   useEffect(() => setCode(props.code), [props.code])
-  useDebounce(() => setPreviewCode(code), 300, [code])
+  useDebounce(() => setPreviewCode(code), 500, [code])
 
   return (
-    <div className={'my-2 mx-1 flex flex-row ring-1 ring-gray-500 w-9/12 h-[300px]'}>
+    <div className={clsx('my-2 mx-1 flex flex-row ring-1 ring-gray-500 w-9/12 h-[300px]', props.className)}>
       <div className={'w-0 flex-grow border-r flex-col flex'}>
         {css && (
           <div className={'bg-black text-white text-lg'}>

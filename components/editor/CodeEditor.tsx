@@ -4,7 +4,7 @@ import {useCallback} from "react";
 const Ace = dynamic(
   async () => {
     const ace = await import('react-ace');
-    require('ace-builds/src-noconflict/mode-jsx');
+    require('ace-builds/src-noconflict/mode-javascript');
     require('ace-builds/src-noconflict/mode-css');
     require('ace-builds/src-noconflict/theme-monokai');
     return ace;
@@ -25,7 +25,7 @@ type Props = {
 export const CodeEditor = (props: Props) => {
   return (
     <Ace
-      mode={props.mode}
+      mode={props.mode==='jsx'?'javascript':'css'}
       theme="monokai"
       width={'100%'}
       height={'100%'}

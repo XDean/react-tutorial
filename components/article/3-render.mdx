@@ -1,0 +1,18 @@
+import {SrcReactEditor} from "../editor/SrcReactEditor";
+
+export const meta = {
+  id: 'render',
+  name: '元素渲染'
+}
+
+# 元素渲染
+
+上一节讲到，我们可以在JSX中用便捷的标签语法定义React元素。
+
+React元素并不是浏览器的DOM元素，而是Javascript对象，创建它们的开销远小于DOM元素。
+而React的工作就是把React元素渲染成DOM元素。
+
+下面是一个最简化的例子，调用`ReactDOM.render`方法就可以把React元素渲染到目标DOM元素上：
+
+<SrcReactEditor js={'/code/render.jsx'}/>
+

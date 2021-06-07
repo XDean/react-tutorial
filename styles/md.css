@@ -7,3 +7,8 @@
 .markdown-body ul {
     list-style: disc;
 }
+
+.markdown-body pre {
+    width: 800px;
+    max-width: 70%;
+}

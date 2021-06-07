@@ -1,0 +1,52 @@
+import {SrcReactEditor} from "../editor/SrcReactEditor";
+
+export const meta = {
+  id: 'controlled',
+  name: '受控组件'
+}
+
+# 受控组件
+
+前面的章节我们的例子主要是简单的文本内容，没有什么状态。
+
+现在让我们来考虑一个简单需求
+
+- 一个可以输入文字的文本框
+- 一个确认按钮，按下时弹出alert显示文本内容
+- 一个清楚按钮，按下时清除文本
+
+如果时用传统的HTML来写，大概会形如
+
+```jsx
+<input type="text" id="text"/>
+<button id="confirm">confirm</button>
+<button id="clear">clear</button>
+
+const text = document.getElementById('text')
+const confirm = document.getElementById('confirm')
+const clear = document.getElementById('clear')
+
+confirm.onclick = () => alert(text.value)
+clear.onclick = () => text.value = ''
+```
+
+我们需要获取对应的DOM元素对象，然后得到文本内容。
+在React里，你当然也可以采用同样的方法，具体的方法在之后的章节学习`useRef`会提到。
+
+但这并不是首选的方法。
+
+更多的时候，我们会采用受控组件的形式，来自己控制组件的。
+
+<SrcReactEditor js={'/code/controlled.jsx'}/>
+
+我们设置了`input`的`value`属性为`content`，所以当`content`变化时，`input`的值也会改变。
+
+下面的两个按钮则只需要面向`content`状态，而不需要和`input`接触。三个组件之间通过`content`联系了起来。
+
+所谓受控组件，就是状态受到父组件控制的组件。
+这样做的好处是，在需要与组件状态进行交互时，不需要通过命令来改变，而只需要改变数据。
+这其实也是React响应式思想的体现。
+
+也许乍一看，你会觉得React这样不是更复杂么。
+那么不妨想一想，现在，如果我们有新的需求，要在文本框边上显示字数，两种模式下改如何修改，孰优孰劣。
+

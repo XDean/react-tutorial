@@ -15,7 +15,8 @@ export const meta = {
 
 <SrcReactEditor js={'/code/state.jsx'}/>
 
-`useState`返回一个数组，包含两个值
+`useState`接受一个参数作为默认值，也可以不填即为`undefined`。
+然后它返回一个数组，包含两个值
 
 1. 状态的值，即`count`
 2. 更改状态的函数，即`setCount`

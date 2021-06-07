@@ -4,6 +4,7 @@ import {CodeEditor} from "./CodeEditor";
 import {ReactPreviewer} from "./ReactPreviewer";
 import {Code} from "./type";
 import clsx from "clsx";
+import {Ace} from "ace-builds";
 
 type Props = {
   code: Code
@@ -11,12 +12,14 @@ type Props = {
 }
 
 export const ReactEditor = (props: Props) => {
+  const [refs, setRefs] = useState<Partial<Record<keyof Code, Ace.Editor>>>({})
   const [type, setType] = useState<keyof Code>('js')
   const [code, setCode] = useState(props.code)
   const [previewCode, setPreviewCode] = useState(props.code)
   const [expand, setExpand] = useState(false)
   useEffect(() => setCode(props.code), [props.code])
   useDebounce(() => setPreviewCode(code), 500, [code])
+  useEffect(() => refs[type]?.resize(), [expand, type, refs])
 
   return (
     <div className={clsx(
@@ -48,9 +51,11 @@ export const ReactEditor = (props: Props) => {
         </div>
         {['js', 'css'].map(t => (
           <div className={clsx('relative h-0 flex-grow', t === type ? 'block' : 'hidden')} key={t}>
-            <CodeEditor code={code[t as keyof Code]}
-                        onCodeChange={useCallback((v) => setCode(c => ({...c, [t]: v})), [])}
-                        mode={t === 'js' ? 'jsx' : 'css'}/>
+            <CodeEditor
+              onRef={r => setRefs(rs => ({...rs, [t]: r}))}
+              code={code[t as keyof Code]}
+              onCodeChange={useCallback((v) => setCode(c => ({...c, [t]: v})), [])}
+              mode={t === 'js' ? 'jsx' : 'css'}/>
           </div>
         ))}
       </div>

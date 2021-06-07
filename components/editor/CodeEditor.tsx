@@ -8,6 +8,7 @@ const Ace = dynamic(
     require('ace-builds/src-noconflict/mode-javascript');
     require('ace-builds/src-noconflict/mode-css');
     require('ace-builds/src-noconflict/theme-monokai');
+    require('ace-builds/src-noconflict/ext-language_tools')
     return ace;
   },
   {
@@ -43,7 +44,7 @@ export const CodeEditor = (props: Props) => {
         }
       }}
       setOptions={{
-        enableBasicAutocompletion: true,
+        useWorker: false,
         enableLiveAutocompletion: true,
         enableSnippets: false,
         showLineNumbers: true,

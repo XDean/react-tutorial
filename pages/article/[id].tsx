@@ -10,10 +10,13 @@ export default function Index() {
   const {id} = router.query
   const article = AllArticles.find(e => e.meta.id === id) || AllArticles[0]
   useEffect(() => {
-    if (id !== article.meta.id) {
+    if (router.isReady && id !== article.meta.id) {
       router.replace(`/article/${article.meta.id}`, undefined, {shallow: true})
     }
-  }, [id, article.meta.id])
+  }, [router.isReady, id, article.meta.id])
+
+  if (!router.isReady)
+    return null
 
   return (
     <DefaultLayout>

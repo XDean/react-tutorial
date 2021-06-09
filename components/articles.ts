@@ -8,6 +8,16 @@ import A6, {meta as m6} from './article/6-condition.mdx'
 import A7, {meta as m7} from './article/7-list.mdx'
 import A8, {meta as m8} from './article/8-controlled.mdx'
 
+const Introduce = {Component: A0, meta: m0}
+const HelloWorld = {Component: A1, meta: m1}
+const JSX = {Component: A2, meta: m2}
+const Render = {Component: A3, meta: m3}
+const Component = {Component: A4, meta: m4}
+const State = {Component: A5, meta: m5}
+const Condition = {Component: A6, meta: m6}
+const List = {Component: A7, meta: m7}
+const Controlled = {Component: A8, meta: m8}
+
 export type ArticleData = {
   Component: React.ComponentType
   meta: {
@@ -17,13 +27,13 @@ export type ArticleData = {
 }
 
 export const AllArticles: ArticleData[] = [
-  {Component: A0, meta: m0},
-  {Component: A1, meta: m1},
-  {Component: A2, meta: m2},
-  {Component: A3, meta: m3},
-  {Component: A4, meta: m4},
-  {Component: A5, meta: m5},
-  {Component: A6, meta: m6},
-  {Component: A7, meta: m7},
-  {Component: A8, meta: m8},
+  Introduce,
+  HelloWorld,
+  JSX,
+  Render,
+  Condition,
+  List,
+  Component,
+  State,
+  Controlled,
 ]

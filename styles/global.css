@@ -2,6 +2,7 @@
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 
 @import "./md.css";
+@import "./ace.css";
 
 @import "~prismjs/themes/prism-okaidia.css";
 

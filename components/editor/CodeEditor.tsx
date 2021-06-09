@@ -22,6 +22,7 @@ type Props = {
   mode: 'jsx' | 'css'
   code: string
   onCodeChange: (v: string) => void
+  highlight?: { start: number, end: number }[]
   onRef?: (e: a.Editor) => void
 }
 
@@ -42,6 +43,7 @@ export const CodeEditor = (props: Props) => {
         if (!!props.onRef) {
           props.onRef(editorInstance)
         }
+        props.highlight?.map(h => editorInstance.session.highlightLines(h.start, h.end, "highlight"))
       }}
       setOptions={{
         useWorker: false,

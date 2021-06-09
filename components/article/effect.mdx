@@ -1,0 +1,40 @@
+import {SrcReactEditor} from "../editor/SrcReactEditor";
+
+export const meta = {
+  id: 'effect',
+  name: '副作用 Effect'
+}
+
+# 副作用 Effect
+
+前几节我们学习了组件并且可以通过`useState`控制他们的状态。
+
+你是否还记得`计数器`的例子。现在我们有了新的需求。
+
+- 每当计数变化，在命令行打印计数信息
+
+一个天真的想法是，在`onClick`方法里加上打印语句。
+但是这将导致我们要在`count`和`clear`做两处相同的修改，这使得维护的成本大大提高。
+
+这时，我们就需要使用`useEffect`。请看下面的例子
+
+<SrcReactEditor js={'/code/effect.jsx'}/>
+
+按下<kbd>F12</kbd>，然后操作新的计数器，可以看到我们打出的log信息。
+
+`useEffect`，副作用，顾名思义，它执行一些不直接和渲染UI相关的副作用。作为参数传递进去的函数会在每一次render的时候被调用。
+
+## Effect依赖项
+
+计数并打印log看上去没什么问题，现在我们又有了新的需求。
+
+- 添加一个按钮来控制提示信息的字体大小
+
+理所当然的，我们添加了一个新的状态`big`。结果如下
+
+<SrcReactEditor js={'/code/effect2.jsx'}/>
+
+看上去不错！但是，如果你仔细观察控制台，你会发现，在我们toggle字体大小的时候，也会打印log信息。这些冗余信息与我们的期望不符。
+
+这时，我们可以指定`useEffect`的第二个参数`deps`，它接收一个依赖列表，使得副作用只在依赖项改变时
+

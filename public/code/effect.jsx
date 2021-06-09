@@ -1,5 +1,10 @@
 const App = () => {
   const [count, setCount] = React.useState(0)
+
+  React.useEffect(() => {
+    console.log(`count: ${count}`)
+  })
+
   return (
     <div>
       <button onClick={() => setCount(c => c + 1)}>

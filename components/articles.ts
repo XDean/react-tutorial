@@ -38,5 +38,5 @@ export const AllArticles: ArticleData[] = [
   Component,
   State,
   Controlled,
-  // Effect,
+  Effect,
 ]

@@ -1,0 +1,7 @@
+.navButton {
+    @apply cursor-pointer text-2xl p-2 mx-4 transition;
+}
+
+.navButton:hover {
+    @apply underline bg-gray-100 rounded-2xl;
+}

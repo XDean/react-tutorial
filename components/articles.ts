@@ -25,6 +25,7 @@ export type ArticleData = {
   meta: {
     id: string
     name: string
+    title?:string
   }
 }
 

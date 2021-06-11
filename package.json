@@ -20,6 +20,7 @@
     "react-ace": "^9.4.0",
     "react-dom": "^17.0.1",
     "react-use": "^17.2.4",
+    "react-utterances": "^0.6.4",
     "swr": "^0.5.6"
   },
   "devDependencies": {

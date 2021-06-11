@@ -10,6 +10,7 @@ import A8, {meta as m8} from './article/8-controlled.mdx'
 import A9, {meta as m9} from './article/effect.mdx'
 import A10, {meta as m10} from './article/hook.mdx'
 import A11, {meta as m11} from './article/context.mdx'
+import AP, {meta as mp} from './article/placeholder.mdx'
 
 const Introduce = {Component: A0, meta: m0}
 const HelloWorld = {Component: A1, meta: m1}
@@ -23,6 +24,7 @@ const Controlled = {Component: A8, meta: m8}
 const Effect = {Component: A9, meta: m9}
 const Hook = {Component: A10, meta: m10}
 const Context = {Component: A11, meta: m11}
+const PlaceHolder = {Component: AP, meta: mp}
 
 export type ArticleData = {
   Component: React.ComponentType
@@ -46,4 +48,5 @@ export const AllArticles: ArticleData[] = [
   Effect,
   Hook,
   Context,
+  PlaceHolder,
 ]

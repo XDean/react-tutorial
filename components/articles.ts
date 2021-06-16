@@ -11,6 +11,7 @@ import A9, {meta as m9} from './article/effect.mdx'
 import A10, {meta as m10} from './article/hook.mdx'
 import A11, {meta as m11} from './article/context.mdx'
 import A12, {meta as m12} from './article/memo.mdx'
+import A13, {meta as m13} from './article/ref.mdx'
 
 import AP, {meta as mp} from './article/placeholder.mdx'
 
@@ -27,6 +28,7 @@ const Effect = {Component: A9, meta: m9}
 const Hook = {Component: A10, meta: m10}
 const Context = {Component: A11, meta: m11}
 const Memo = {Component: A12, meta: m12}
+const Ref = {Component: A13, meta: m13}
 const PlaceHolder = {Component: AP, meta: mp}
 
 export type ArticleData = {
@@ -52,5 +54,6 @@ export const AllArticles: ArticleData[] = [
   Hook,
   Context,
   Memo,
+  Ref,
   PlaceHolder,
 ]

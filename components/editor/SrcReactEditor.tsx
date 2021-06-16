@@ -1,24 +1,23 @@
-import {ReactEditor} from "./ReactEditor";
+import {ReactEditor, ReactEditorProps} from "./ReactEditor";
 import useSWR from "swr";
 import {fetchStatic} from "../util/fetch";
 
 type Props = {
   js: string
   css?: string
-  className?:string
-}
+} & Omit<ReactEditorProps, 'code'>
 
-export const SrcReactEditor = (props: Props) => {
-  const js = useSWR(props.js, fetchStatic);
-  const css = useSWR(props.css || null, fetchStatic);
+export const SrcReactEditor = ({js, css, ...rest}: Props) => {
+  const jsCode = useSWR(js, fetchStatic);
+  const cssCode = useSWR(css || null, fetchStatic);
 
   return (
     <ReactEditor
-      className={props.className}
       code={{
-        js: js.data || "",
-        css: css.data || "",
+        js: jsCode.data || "",
+        css: cssCode.data || "",
       }}
+      {...rest}
     />
   )
 }

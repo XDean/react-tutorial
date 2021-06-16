@@ -41,28 +41,31 @@ const App = () => {
   }
 
   return (
-    <div className={'game'}>
-      <div className={'game-board'}>
-        <Board
-          squares={history[index]}
-          onClick={handleClickBoard}
-        />
-      </div>
-      <div className={'game-info'}>
-        <div>
-          {winner ?
-            (winner === 'draw' ? 'Draw' : 'Winner: ' + winner) :
-            'Next player: ' + (index % 2 === 0 ? 'X' : 'O')}
+    <div>
+      <h2>Tic Tac Toe</h2>
+      <div className={'game'}>
+        <div className={'game-board'}>
+          <Board
+            squares={history[index]}
+            onClick={handleClickBoard}
+          />
         </div>
-        <ol>
-          {history.map((_, idx) => (
-            <li key={idx}>
-              <button onClick={() => setIndex(idx)}>
-                {idx === 0 ? 'Go to game start' : `Go to move #${idx}`}
-              </button>
-            </li>
-          ))}
-        </ol>
+        <div className={'game-info'}>
+          <div>
+            {winner ?
+              (winner === 'draw' ? 'Draw' : 'Winner: ' + winner) :
+              'Next player: ' + (index % 2 === 0 ? 'X' : 'O')}
+          </div>
+          <ol>
+            {history.map((_, idx) => (
+              <li key={idx}>
+                <button onClick={() => setIndex(idx)}>
+                  {idx === 0 ? 'Go to game start' : `Go to move #${idx}`}
+                </button>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   )

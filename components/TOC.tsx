@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import clsx from "clsx";
-import {AllArticles, ArticleData} from "./articles";
+import {BasicArticles} from "./article/basic/articles";
+import {ArticleData} from "./article/article";
 
 type Props = {
   selected: ArticleData
@@ -9,7 +10,7 @@ type Props = {
 export const TOC = (props: Props) => {
   return (
     <ul className={'text-xl'}>
-      {AllArticles.map((e, i) => (
+      {BasicArticles.map((e, i) => (
         <li key={i}>
           <Link href={`/article/${e.meta.id}`}>
             <div className={clsx(

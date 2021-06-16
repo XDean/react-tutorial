@@ -1,9 +1,10 @@
-import {AllArticles, ArticleData} from "./articles";
+import {BasicArticles} from "./article/basic/articles";
 import {useMemo} from "react";
 import {GithubComment} from "./util/GithubComment";
 import Link from 'next/link'
 import {VisitorTag} from "./util/VisitorTag";
 import css from './Article.module.css'
+import {ArticleData} from "./article/article";
 
 type Props = {
   data: ArticleData
@@ -11,10 +12,10 @@ type Props = {
 
 export const Article = (props: Props) => {
   const {prev, next} = useMemo(() => {
-    const idx = AllArticles.indexOf(props.data)
+    const idx = BasicArticles.indexOf(props.data)
     return {
-      prev: idx === 0 ? undefined : AllArticles[idx - 1],
-      next: idx === AllArticles.length - 1 ? undefined : AllArticles[idx + 1],
+      prev: idx === 0 ? undefined : BasicArticles[idx - 1],
+      next: idx === BasicArticles.length - 1 ? undefined : BasicArticles[idx + 1],
     }
   }, [props.data])
   return (

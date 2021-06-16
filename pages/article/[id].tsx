@@ -3,12 +3,12 @@ import {useRouter} from 'next/router'
 import {TOC} from "../../components/TOC";
 import {useEffect} from "react";
 import {Article} from "../../components/Article";
-import {AllArticles} from "../../components/articles";
+import {BasicArticles} from "../../components/article/basic/articles";
 
 export default function Index() {
   const router = useRouter()
   const {id} = router.query
-  const article = AllArticles.find(e => e.meta.id === id) || AllArticles[0]
+  const article = BasicArticles.find(e => e.meta.id === id) || BasicArticles[0]
   useEffect(() => {
     if (router.isReady && id !== article.meta.id) {
       router.replace(`/article/${article.meta.id}`, undefined, {shallow: true})

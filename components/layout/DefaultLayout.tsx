@@ -15,7 +15,7 @@ export const DefaultLayout = (props: PropsWithChildren<{}>) => {
           <i className="fab fa-github"/>
         </a>
       </div>
-      <main className={'relative flex-grow w-full p-2 h-0'}>
+      <main className={'relative flex-grow w-full py-2 h-0'}>
         {props.children}
       </main>
     </div>

@@ -11,7 +11,7 @@ export default function Home() {
         </div>
         <div className={'text-3xl font-bold p-4 mt-8 shadow-xl bg-white border-gray-500 border rounded-lg ' +
         'transition hover:bg-blue-600 hover:text-white cursor-pointer'}>
-          <Link href={'/article/0'}>
+          <Link href={'/article/basic/introduce'}>
             <div>
               开始阅读
             </div>

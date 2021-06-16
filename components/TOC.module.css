@@ -1,0 +1,11 @@
+.item {
+    @apply px-2 py-1 cursor-pointer hover:underline;
+}
+
+.activeItem {
+    @apply bg-blue-300 text-white rounded-md;
+}
+
+.inactiveItem {
+    @apply hover:text-gray-700;
+}

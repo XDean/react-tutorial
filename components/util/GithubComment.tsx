@@ -16,5 +16,5 @@ export const GithubComment = () => {
       router.events.off('routeChangeComplete', listener)
     };
   }, [router.events]);
-  return show && <ReactUtterences type={'pathname'} repo={'XDean/blog-comment'}/>
+  return show ? <ReactUtterences type={'pathname'} repo={'XDean/blog-comment'}/> : null
 }

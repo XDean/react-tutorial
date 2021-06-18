@@ -1,11 +1,14 @@
 import {DefaultLayout} from "../components/layout/DefaultLayout";
 import Link from 'next/link'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faReact} from '@fortawesome/free-brands-svg-icons'
 
 export default function Home() {
   return (
     <DefaultLayout>
       <div className={'w-full h-full flex flex-col items-center justify-center pb-32'}>
-        <i className="fab fa-react text-[500px] text-react animate-spin-slow duration-1000"/>
+        <FontAwesomeIcon icon={faReact}
+                         className={"text-[500px] text-react animate-spin-slow duration-1000"}/>
         <div className={'text-6xl font-bold'}>
           欢迎来到XDean的React教程
         </div>

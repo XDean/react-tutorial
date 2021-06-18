@@ -5,6 +5,8 @@ import {ReactPreviewer} from "./ReactPreviewer";
 import {Code} from "./type";
 import clsx from "clsx";
 import {Ace} from "ace-builds";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCompress, faExpand} from '@fortawesome/free-solid-svg-icons'
 
 export type ReactEditorProps = {
   code: Code
@@ -41,13 +43,10 @@ export const ReactEditor = (props: ReactEditorProps) => {
             CSS
           </div>
           <div className={'w-0 flex-grow'}/>
-          <i
-            title={'全屏'}
-            className={clsx(
-              "fas mr-2 hover:text-gray-300 cursor-pointer hover:shadow-lg",
-              expand ? 'fa-compress' : 'fa-expand'
-            )}
-            onClick={() => setExpand(e => !e)}
+          <FontAwesomeIcon icon={expand ? faCompress : faExpand}
+                           title={'全屏'}
+                           className={"hover:text-gray-300 cursor-pointer hover:shadow-lg mr-2"}
+                           onClick={() => setExpand(e => !e)}
           />
         </div>
         {['js', 'css'].map(t => (

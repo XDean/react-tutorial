@@ -1,6 +1,8 @@
 import {PropsWithChildren} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faReact} from '@fortawesome/free-brands-svg-icons'
+import Image from 'next/image'
+import xdeanLogo from '../../public/favicon.ico'
 
 export const DefaultLayout = (props: PropsWithChildren<{}>) => {
   return (
@@ -11,9 +13,16 @@ export const DefaultLayout = (props: PropsWithChildren<{}>) => {
           XDean的React教程
         </div>
         <div className={'flex-grow w-0'}/>
-        <a className={'cursor-pointer'}
+        <a target={'_blank'}
+           href={'https://xdean.cn'}
+           className={'leading-[0] hover:ring-2 rounded-[20px]'}
+        >
+          <Image src={xdeanLogo} alt={'XDean Logo'} height={40} width={40}/>
+        </a>
+        <a className={'ml-2'}
            target={'_blank'}
-           href={'https://github.com/XDean/react-tutorial'}>
+           href={'https://github.com/XDean/spark-tutorial'}
+        >
           <FontAwesomeIcon icon={faGithub}/>
         </a>
       </div>

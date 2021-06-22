@@ -15,7 +15,7 @@ export const DefaultLayout = (props: PropsWithChildren<{}>) => {
         <div className={'flex-grow w-0'}/>
         <a target={'_blank'}
            href={'https://xdean.cn'}
-           className={'leading-[0] hover:ring-2 rounded-[20px]'}
+           className={'leading-[0px] hover:ring-2 rounded-[20px]'}
         >
           <Image src={xdeanLogo} alt={'XDean Logo'} height={40} width={40}/>
         </a>

@@ -30,12 +30,12 @@ export const Article = (props: Props) => {
         <props.article.Component/>
       </article>
       <div className={'flex flex-row justify-center pb-4 pt-8'}>
-        <Link href={`/article/${props.articleSet.id}/${prev?.meta.id}`}>
+        <Link href={`/article/react/${props.articleSet.id}/${prev?.meta.id}`}>
           <div className={css.navButton}>
             {prev && `上一节：${prev.meta.name}`}
           </div>
         </Link>
-        <Link href={`/article/${props.articleSet.id}/${next?.meta.id}`}>
+        <Link href={`/article/react/${props.articleSet.id}/${next?.meta.id}`}>
           <div className={css.navButton}>
             {next && `下一节：${next.meta.name}`}
           </div>

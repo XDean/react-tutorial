@@ -13,7 +13,7 @@ export default function Index() {
   const article = articleSet.articles.find(e => e.meta.id === id) || articleSet.articles[0]
   useEffect(() => {
     if (router.isReady && (set !== articleSet.id || id !== article.meta.id)) {
-      router.replace(`/article/${articleSet.id}/${article.meta.id}`, undefined, {shallow: true})
+      router.replace(`/article/react/${articleSet.id}/${article.meta.id}`, undefined, {shallow: true})
     }
   }, [router.isReady, id, article.meta.id])
 

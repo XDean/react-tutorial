@@ -1,26 +1,13 @@
-import {DefaultLayout} from "../components/layout/DefaultLayout";
-import Link from 'next/link'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faReact} from '@fortawesome/free-brands-svg-icons'
+import {AllArticles} from "../components/article/article";
+import {useRouter} from "next/router";
+import {useEffect} from "react";
 
-export default function Home() {
-  return (
-    <DefaultLayout>
-      <div className={'w-full h-full flex flex-col items-center justify-center pb-32'}>
-        <FontAwesomeIcon icon={faReact}
-                         className={"text-[500px] text-react animate-spin-slow duration-1000"}/>
-        <div className={'text-6xl font-bold'}>
-          欢迎来到XDean的React教程
-        </div>
-        <div className={'text-3xl font-bold p-4 mt-8 shadow-xl bg-white border-gray-500 border rounded-lg ' +
-        'transition hover:bg-blue-600 hover:text-white cursor-pointer'}>
-          <Link href={'/article/basic/introduce'}>
-            <div>
-              开始阅读
-            </div>
-          </Link>
-        </div>
-      </div>
-    </DefaultLayout>
-  )
+export default function Index() {
+  const router = useRouter();
+  useEffect(() => {
+    const articleSet = AllArticles[0]
+    const article = articleSet.articles[0]
+    router.replace(`/article/react/${articleSet.id}/${article.meta.id}`)
+  })
+  return null
 }

@@ -1,9 +1,9 @@
-import {DefaultLayout} from "../../../components/layout/DefaultLayout";
+import {DefaultLayout} from "../../../../components/layout/DefaultLayout";
 import {useRouter} from 'next/router'
-import {TOC} from "../../../components/TOC";
+import {TOC} from "../../../../components/TOC";
 import {useEffect} from "react";
-import {Article} from "../../../components/Article";
-import {AllArticles} from "../../../components/article/article";
+import {Article} from "../../../../components/Article";
+import {AllArticles} from "../../../../components/article/article";
 import Head from 'next/head'
 
 export default function Index() {
